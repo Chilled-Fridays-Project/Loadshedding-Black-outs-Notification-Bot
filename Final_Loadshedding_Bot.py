@@ -2,17 +2,17 @@ from time import sleep
 import tweepy
 from twilio.rest import Client 
  
-consumer_key="NUQw7aYKYoeoJkg7fIqLSa3d7"
-consumer_secret="zRsMqa9qfN4obX2Aopblupfo2vpX57DRYNw2wTcVJoSmeGBfik"
-access_token="329232099-O1bRUfHiJ0thUZSlHXVvnW1pYhWv5xA24xgcjMMq"
-access_token_secret="zXd8mNN54UnExR7k9BboGTSlz75NyVUXDSuJULQeq4E5H"
+consumer_key=""
+consumer_secret=""
+access_token=""
+access_token_secret=""
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-account_sid ='AC112c3f2b29f35f63562dcae702cc2642'
-auth_token = 'ec8e5b1ace3729b325e39573ee510ce9' 
+account_sid =''
+auth_token = '' 
 client = Client(account_sid, auth_token) 
 
 #keyword_tweets=[]
@@ -30,14 +30,14 @@ while True:
     try: #City of Tshwane loadshedding schedule
         user=api.user_timeline("CityTshwane",tweet_mode="extended")
 
-        ty=open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\Tshwane_tweets.txt",'r')
+        ty=open("Tshwane_tweets.txt",'r')
         keyword_tweets=ty.read().split("*!>*")
         if '' in keyword_tweets[-1] or 'x0' in keyword_tweets[-1]:
             
             keyword_tweets.pop(-1)
         keyword_tweets=[i.encode('utf-8').decode('unicode_escape') for i in keyword_tweets]
         #open dates of the tweets into a list'
-        td=open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\Tshwane_tweets_date.txt",'r')
+        td=open("Tshwane_tweets_date.txt",'r')
         tweets_dates_times=td.read().split("*!>*")
         tweets_dates_times.pop(-1)
         twittt=[]
@@ -68,19 +68,19 @@ while True:
             
             
             message = client.messages.create(  
-                          messaging_service_sid='MGedff2c3f26f74f6ee88fea72f504ef9c', 
+                          messaging_service_sid='', 
                           body="City of Tshwane ere...\n\n"+tweet_send[i], 
-                          from_= '+18453851922',
-                          to='+27743170985' )
+                          from_= '+1543323434',
+                          to='+27754654365' )
             
-            with open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\Tshwane_tweets.txt","a",encoding='unicode_escape') as tweetts:
+            with open("Tshwane_tweets.txt","a",encoding='unicode_escape') as tweetts:
                 
 
 
                 tweetts.write(twittt[i]+"*!>*")
                 
                 
-            with open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\Tshwane_tweets_date.txt",'a') as twt_dates:
+            with open("Tshwane_tweets_date.txt",'a') as twt_dates:
 
 
 
@@ -93,13 +93,13 @@ while True:
     try:
         user=api.user_timeline("Eskom_SA",tweet_mode="extended")
 
-        ty=open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\tweets.txt",'r')
+        ty=open("tweets.txt",'r')
         keyword_tweets=ty.read().split("*!>*")
         if '' in keyword_tweets[-1] or 'x0' in keyword_tweets[-1]:
             keyword_tweets.pop(-1) 
         keyword_tweets=[i.encode('utf-8').decode('unicode_escape') for i in keyword_tweets]
         #open dates of the tweets into a list
-        td=open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\tweets_date.txt",'r')
+        td=open("tweets_date.txt",'r')
         tweets_dates_times=td.read().split("*!>*")
         tweets_dates_times.pop(-1)
 
@@ -132,19 +132,19 @@ while True:
             
             
             message = client.messages.create(  
-                          messaging_service_sid='MGedff2c3f26f74f6ee88fea72f504ef9c', 
+                          messaging_service_sid='', 
                           body="Eskom ere...\n\n"+tweet_send[i], 
-                          from_= '+18453851922',
-                          to='+27743170985' )
+                          from_= '+14t567789',
+                          to='+212345677878' )
             
-            with open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\tweets.txt","a",encoding='unicode_escape') as tweetts:
+            with open("tweets.txt","a",encoding='unicode_escape') as tweetts:
                 
 
 
                 tweetts.write(twittt[i]+"*!>*")
                 
                 
-            with open("C:\\Users\\THULARE KABELO\\Documents\\Business\\Chilled Fridays Listening Sessions\\Music Program Codes\\tweets_date.txt",'a') as twt_dates:
+            with open("tweets_date.txt",'a') as twt_dates:
 
 
 
