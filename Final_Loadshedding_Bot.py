@@ -70,8 +70,8 @@ while True:
             message = client.messages.create(  
                           messaging_service_sid='', 
                           body="City of Tshwane ere...\n\n"+tweet_send[i], 
-                          from_= '+1543323434',
-                          to='+27754654365' )
+                          from_= '',
+                          to='' )
             
             with open("Tshwane_tweets.txt","a",encoding='unicode_escape') as tweetts:
                 
@@ -134,8 +134,8 @@ while True:
             message = client.messages.create(  
                           messaging_service_sid='', 
                           body="Eskom ere...\n\n"+tweet_send[i], 
-                          from_= '+14t567789',
-                          to='+212345677878' )
+                          from_= '',
+                          to='' )
             
             with open("tweets.txt","a",encoding='unicode_escape') as tweetts:
                 
